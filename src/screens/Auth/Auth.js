@@ -1,25 +1,43 @@
 import React, { Component } from 'react'
-import { View, Text , Button} from 'react-native';
+import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
 
-import startMainTabs  from '../startMainTabs/startMainTabs';
-
+import startMainTabs from '../startMainTabs/startMainTabs';
+import DefaultInput from '../../UI/DefaultInput/DefaultInput';
 class AuthScreen extends Component {
-  loginHandler = () => {
-    startMainTabs();
+    loginHandler = () => {
+        startMainTabs();
     };
 
     render() {
         return (
-            <View>
+            <View style={styles.container}>
                 <Text>
-                    Login Screen
+                    Please Log In
                 </Text>
+                <Button title="Switch to Login" onPress={this.loginHandler} />
 
+                <View style={styles.inputContainer}>
+                    <DefaultInput placeholder="Your Email Address"/>
+                    <DefaultInput placeholder="Password"  />
+                    <DefaultInput placeholder="Confirm Password" />
+                </View>
 
-                <Button title="Login" onPress={this.loginHandler}/>
+                <Button title="Submit" onPress={this.loginHandler} />
             </View>
         )
     };
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    inputContainer: {
+        width: "80%"
+    },
+   
+});
 
 export default AuthScreen;
