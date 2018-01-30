@@ -1,8 +1,21 @@
-import React, { Component } from 'react'
-import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
+import React, {Component} from 'react'
+import {
+    View,
+    Text,
+    Button,
+    StyleSheet,
+    TextInput,
+    StatusBar,
+    ImageBackground
+} from 'react-native';
 
 import startMainTabs from '../startMainTabs/startMainTabs';
 import DefaultInput from '../../UI/DefaultInput/DefaultInput';
+import HeadingText from '../../UI/HeadingText/HeadingText';
+import MainText from '../../UI/MainText/MainText';
+import ButtonWithBack from '../../UI/Button/Button';
+
+import background from '../../assets/background.jpg';
 class AuthScreen extends Component {
     loginHandler = () => {
         startMainTabs();
@@ -10,20 +23,26 @@ class AuthScreen extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <Text>
-                    Please Log In
-                </Text>
-                <Button title="Switch to Login" onPress={this.loginHandler} />
+            <ImageBackground source={background} style={styles.backgroundImage}>
+                <View style={styles.container}>
 
-                <View style={styles.inputContainer}>
-                    <DefaultInput placeholder="Your Email Address"/>
-                    <DefaultInput placeholder="Password"  />
-                    <DefaultInput placeholder="Confirm Password" />
+                    <MainText>
+                        <HeadingText>
+                            Please Log In
+                        </HeadingText>
+                    </MainText>
+
+                    <ButtonWithBack onPress={this.loginHandler} color="#29aaf4">Switch to Login</ButtonWithBack>
+                    <View style={styles.inputContainer}>
+                        <DefaultInput placeholder="Your Email Address" style={styles.input}/>
+                        <DefaultInput placeholder="Password" style={styles.input}/>
+                        <DefaultInput placeholder="Confirm Password" style={styles.input}/>
+                    </View>
+
+                    <ButtonWithBack onPress={this.loginHandler} color="#29aaf4">Submit</ButtonWithBack>
+
                 </View>
-
-                <Button title="Submit" onPress={this.loginHandler} />
-            </View>
+            </ImageBackground>
         )
     };
 }
@@ -37,7 +56,15 @@ const styles = StyleSheet.create({
     inputContainer: {
         width: "80%"
     },
-   
+    input: {
+        backgroundColor: "#eee",
+        borderColor: "#bbb"
+    },
+    backgroundImage: {
+        width: '100%',
+        flex: 1
+    }
+
 });
 
 export default AuthScreen;
