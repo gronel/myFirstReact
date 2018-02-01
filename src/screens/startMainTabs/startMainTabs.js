@@ -42,6 +42,14 @@ const startTab = () => {
                     }
                 }
             ],
+            appStyle: {
+                // tabBarBackgroundColor: '#0f2362',
+                // tabBarButtonColor: '#ffffff',
+                // tabBarSelectedButtonColor: '#63d7cc',
+                // tabBarTranslucent: false,
+                forceTitlesDisplay: true,
+                tabFontFamily: 'Avenir-Medium'  // existing font family name or asset file without extension which can be '.ttf' or '.otf' (searched only if '.ttf' asset not found)
+              },
             drawer: { // optional, add this if you want a side menu drawer in your app
                 left: { // optional, define if you want a drawer from the left
                   screen: 'myFirstReact.SideDrawerScreen', // unique ID registered with Navigation.registerScreen

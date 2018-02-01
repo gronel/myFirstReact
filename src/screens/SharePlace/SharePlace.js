@@ -22,7 +22,7 @@ import PickImage from '../../components/PickImage/PickImage';
 import PickLocation from '../../components/PickLocation/PickLocation';
 
 // create a component
-class SharePlace extends Component {
+class SharePlace extends Component { 
 
     state = {
         placeName: ""
@@ -46,11 +46,9 @@ class SharePlace extends Component {
         }
     }
 
-    placeAddedHandler = placeName => {
+    placeAddedHandler = () => {
         if (this.state.placeName.trim() !== "") {
-            this
-                .props
-                .onAddPlace(placeName);
+            this.props.onAddPlace(this.state.placeName);
         }
 
     };
