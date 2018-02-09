@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 
 import AuthScreen from "./src/screens/Auth/Auth";
 import SharePlaceScreen from './src/screens/SharePlace/SharePlace';
-import FindPlaceScreen from './src/screens/FindPlace/FindPlace';
+import FindPlaceScreen from './src/screens/FindPlace/FindPlaceScreen';
 import PlaceDetailScreen from './src/screens/PlaceDetail/PlaceDetail';
 import SideDrawerScreen from './src/screens/SideDrawer/SideDrawer';
 

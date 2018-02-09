@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.reactnativenavigation.NavigationApplication;
-
+import com.imagepicker.ImagePickerPackage;
  public class MainApplication extends NavigationApplication {
 
      @Override
@@ -27,7 +27,8 @@ import com.reactnativenavigation.NavigationApplication;
          // No need to add RnnPackage and MainReactPackage
          return Arrays.<ReactPackage>asList(
             new MapsPackage(),
-              new VectorIconsPackage()
+              new VectorIconsPackage(),
+              new ImagePickerPackage()
          );
      }
 
