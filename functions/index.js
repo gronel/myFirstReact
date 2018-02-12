@@ -4,7 +4,7 @@ const fs = require("fs");
 const UUID = require("uuid-v4");
 
 const gcconfig = {
-    projectId: "awesome-place-1f192",
+    projectId: "yourID",
     keyFilename: "awesome-places.json"
   };
   
@@ -20,7 +20,7 @@ const gcconfig = {
         console.log(err);
         return response.status(500).json({ error: err });
       });
-      const bucket = gcs.bucket("awesome-place-1f192.appspot.com");
+      const bucket = gcs.bucket("yourID.appspot.com");
       const uuid = UUID();
   
       bucket.upload(
